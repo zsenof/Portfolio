@@ -1,0 +1,66 @@
+/* La barre de couleur / Espacement des sections pour éviter qu'elles ne soient masquées par la navbar */
+div[id] {
+    padding-top: 45px; /* Décalage pour les sections */
+    margin-bottom: 0px;
+}
+
+/* Fixer la barre de navigation */
+.navbar {
+    position: fixed; /* Fixe la navbar en haut de la page */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8f9fa;  /* Fond clair pour la navbar */
+    padding: 0px 0;  /* Un peu plus d'espace pour les liens */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre portée pour la navbar */
+    z-index: 1000; /* Assure que la navbar est au-dessus du contenu */
+    display: flex;
+    justify-content: center;  /* Centrer les éléments de la navbar */
+}
+
+/* Liens de la navbar */
+.navbar a {
+    margin: 0 0px;  /* Plus d'espace entre les liens */
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;  /* Couleur sombre pour les liens */
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: #007bff;  /* Couleur au survol */
+}
+
+/* Style global du corps de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    margin-top: 0px; /* Décalage sous la navbar */
+}
+
+
+
+/* Style du titre de la navbar */
+.navbar-title {
+    font-size: 24px;
+    color: #333;
+    margin-right: 0px; /* Aligne le titre à gauche */
+    padding-left: 0px; /* Espace entre le titre et le bord gauche */
+}
+
+/* Style des titres */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+
+/* Style pour le footer (s'il y en a un) */
+footer {
+    text-align: center;
+    padding: 0px 0;
+    background-color: #f8f9fa;
+    margin-top: 0px;
+}
+

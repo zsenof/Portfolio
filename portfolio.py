@@ -7,9 +7,7 @@ from PIL import Image
 st.set_page_config(page_title="Portfolio Zseno Fouopa", page_icon="📊", layout="wide")
 
 # Titre principal
-#st.title("Bienvenue sur mon Portfolio") => titre optionnel
-st.title("""Bienvenue dans mon univers, où les données prennent vie! """)
-#st.title("où les données prennent vie!") 
+st.title("""Bienvenue dans mon univers, où les données prennent vie! """) 
 
 # Fonction pour charger le fichier CSS
 def load_css():
@@ -23,7 +21,7 @@ def navbar():
     """Affiche la barre de navigation avec des liens"""
     selection = option_menu(
         menu_title="Mon Portfolio",  # Titre du menu
-        options=["Accueil","Projets Techniques", "CV motivationnel", "Expertise métier", "Contact"],
+        options=["Accueil","Projets", "CV", "Expériences", "Contact"],
         icons=["🏠", "📊", "💼", "📧"],
         menu_icon="cast",  # Icône du menu principal
         default_index=0,  # Option sélectionnée par défaut
@@ -32,11 +30,11 @@ def navbar():
     # Fonction appelée en fonction de l'option sélectionnée
     if selection == "Accueil":
         accueil()
-    elif selection == "CV motivationnel":
+    elif selection == "CV":
         CV()
-    elif selection == "Expertise métier":
+    elif selection == "Expériences":
         Experiences()
-    elif selection == "Projets Techniques":
+    elif selection == "Projets":
         projets()
     elif selection == "Contact":
         contact()
@@ -51,16 +49,14 @@ def accueil():
     # Charger et afficher l'image r
     image = Image.open("images/profil.png")  # Remplacez par votre image locale ou une URL
 
-    #st.subheader("Profil")
    
     # Créer un conteneur pour l'image et le texte avec des colonnes
-    col1, col2 = st.columns([3, 1])
-    with col2:
-        
-        # Afficher l'image ronde
-        st.image(image, width=300)  # Ajuste la largeur de l'image
-        
+    col1, col2 = st.columns([1, 2])
     with col1:
+        # Afficher l'image ronde
+        st.image(image, width=250)  # Ajuste la largeur de l'image
+        
+    with col2:
         # Ajouter le texte à côté de l'image
         st.subheader(""" **Zséno Fouopa** """)
         #st.subheader(""" **Mes valeurs : rigueur, analyse et impact.**""")
@@ -79,7 +75,7 @@ def accueil():
         
         """)
         
-        st.write(""" **#rigueur #analyse #impact.**""")
+        st.write(""" **#Rigueur #Analyse #Impact.**""")
 
 #--- ONGLET CV ____
 
@@ -87,13 +83,24 @@ def accueil():
 def CV():
     """Affiche la section des CV"""
     st.markdown("<div id='CV'></div>", unsafe_allow_html=True)
-    #st.header("Mon CV")
-    # Titre de la page
-    #st.title("Affichage de mon CV Motivationnel")
+    
+    # --- Lien téléchargement CV
+    pdf_file = "cv-motivationnel-zseno.pdf"  # Chemin vers le fichier PDF
+
+    # Lecture du fichier PDF
+    with open(pdf_file, "rb") as f:
+        pdf_data = f.read()
+        
+    # Bouton pour télécharger le PDF
+    st.download_button(
+        label="Télécharger CV Motivationnel",
+        data=pdf_data,
+        file_name="cv-zseno.pdf",
+        mime="application/pdf",
+    )
 
     # Chemin du fichier JPG
     image_path = "images/cvf.png"  # Assurez-vous que ce chemin est correct
-    #st.image(image, width=350)  # Ajuste la largeur de l'image
 
     # Créer un conteneur pour l'image et le texte avec des colonnes
     col1cv, col2cv = st.columns([1, 8])
@@ -104,7 +111,7 @@ def CV():
         # Ajouter le texte à côté de l'image
         try:
             img = Image.open(image_path)
-            st.image(img, caption="CV Motivationnel", width=950)
+            st.image(img, caption="CV Motivationnel", width=400)
         except FileNotFoundError:
             st.error(f"L'image '{image_path}' est introuvable. Vérifiez le chemin et réessayez.")
         except Exception as e:
@@ -216,50 +223,19 @@ def portfolio(titre, description, technologies, pdf_file_path, github_link, gith
 
 
 # Fonction pour afficher la section des Projets
+
 def projets():
     """Affiche les projets du portfolio avec texte à gauche, image au centre et lien de téléchargement à droite"""
     st.markdown("<div id='portfolio'></div>", unsafe_allow_html=True)
-    st.header("Mes Projets")
+    st.header("Mes Projets Techniques")
+    st.markdown("<h5 style='text-align: center; color: #000000;'>Chaque donnée a une histoire à raconter.</h5>", unsafe_allow_html=True)
 
     st.write("""
         <p>  </p>  <!-- Saut de paragraphe -->
         <p>  </p>  <!-- Saut de paragraphe -->
        
         """, unsafe_allow_html=True)
-    
-    # Créer un conteneur pour l'image et le texte avec des colonnes
-    colim1, colim2, colim3, colim4, colim5, colim6, colim7 = st.columns([2, 2, 2, 2, 2, 2, 2])
-    
-    with colim1:
-        image1 = Image.open("outils/sql.png")
-        st.image(image1, width=120)  # Ajuste la largeur de l'image
-    with colim2:
-        image2 = Image.open("outils/Python.jpg")
-        st.image(image2, width=120)  # Ajuste la largeur de l'image
-    with colim3:
-        image3 = Image.open("outils/Pandas.png")
-        st.image(image3, width=120)  # Ajuste la largeur de l'image
-    with colim4:
-        image4 = Image.open("outils/sklearn.png")
-        st.image(image4, width=120)  # Ajuste la largeur de l'image
-    with colim5:
-        image5 = Image.open("outils/vsc.png")
-        st.image(image5, width=120)  # Ajuste la largeur de l'image
-    with colim6:
-        image6 = Image.open("outils/streamlit.jpg")
-        st.image(image6, width=120)  # Ajuste la largeur de l'image
-    with colim7:
-        image7 = Image.open("outils/pbi.jpg")
-        st.image(image7, width=120)  # Ajuste la largeur de l'image
-    
 
-
-    st.write("""
-        <p>   </p>  <!-- Saut de paragraphe -->
-        <p>   </p>  <!-- Saut de paragraphe -->
-        <p>   </p>  <!-- Saut de paragraphe -->
-       
-        """, unsafe_allow_html=True)
     
     # Projet 1 - Toys and model
     pdf_file_1 = "assets/Projet_toys_and_models_ZFO.pdf"  # je n'ai plus besoin d'afficher ce pdf : à bloquer
@@ -313,6 +289,42 @@ def projets():
         key_prefix="projet4"
     )
 
+    st.header(" Mes Outils")
+
+    st.write("""
+        <p>   </p>  <!-- Saut de paragraphe -->
+        <p>   </p>  <!-- Saut de paragraphe -->
+        <p>   </p>  <!-- Saut de paragraphe -->
+       
+        """, unsafe_allow_html=True)
+        
+    # Créer un conteneur pour l'image et le texte avec des colonnes
+    colim1, colim2, colim3, colim4, colim5, colim6, colim7 = st.columns([2, 2, 2, 2, 2, 2, 2])
+    
+    with colim1:
+        image1 = Image.open("outils/sql.png")
+        st.image(image1, width=120)  # Ajuste la largeur de l'image
+    with colim2:
+        image2 = Image.open("outils/Python.jpg")
+        st.image(image2, width=120)  # Ajuste la largeur de l'image
+    with colim3:
+        image3 = Image.open("outils/Pandas.png")
+        st.image(image3, width=120)  # Ajuste la largeur de l'image
+    with colim4:
+        image4 = Image.open("outils/sklearn.png")
+        st.image(image4, width=120)  # Ajuste la largeur de l'image
+    with colim5:
+        image5 = Image.open("outils/vsc.png")
+        st.image(image5, width=120)  # Ajuste la largeur de l'image
+    with colim6:
+        image6 = Image.open("outils/streamlit.jpg")
+        st.image(image6, width=120)  # Ajuste la largeur de l'image
+    with colim7:
+        image7 = Image.open("outils/pbi.jpg")
+        st.image(image7, width=120)  # Ajuste la largeur de l'image
+    
+
+
 # --- ONGLET CONTACT
 
     # Fonction pour afficher la section Contact de manière ludique avec une photo
@@ -328,7 +340,7 @@ def contact():
     with col_gauche:
         # Ajouter une image pour rendre la section plus visuelle
         image = Image.open("images/profil.png")  # Assurez-vous que l'image est dans le bon dossier
-        st.image(image, width=320)  # Ajustez la taille de l'image si nécessaire
+        st.image(image, width=150)  # Ajustez la taille de l'image si nécessaire
 
     # Colonne droite : Texte et Liens de contact
     with col_droite:
@@ -404,7 +416,4 @@ if __name__ == "__main__":
     navbar()  # Affiche la barre de navigation avec option_menu
 
 
-
-
 # streamlit run portfolio.py
-# pipreqs /Users/ztadjouzem/Desktop/VSCODE/PortFolio/

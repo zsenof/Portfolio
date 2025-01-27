@@ -20,7 +20,7 @@ def load_css():
 def navbar():
     """Affiche la barre de navigation avec des liens"""
     selection = option_menu(
-        menu_title="Mon Portfolio",  # Titre du menu
+        menu_title="Portfolio",  # Titre du menu
         options=["Accueil","Projets", "CV", "Expériences", "Contact"],
         icons=["🏠", "📊", "💼", "📧"],
         menu_icon="cast",  # Icône du menu principal

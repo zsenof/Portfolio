@@ -4,7 +4,7 @@ import os
 from PIL import Image
 
 # Configurer la page de l'application
-st.set_page_config(page_title="Portfolio Zfo", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Portfolio Zseno Fouopa", page_icon="📊", layout="wide")
 
 # Titre principal
 #st.title("Bienvenue sur mon Portfolio") => titre optionnel

@@ -49,21 +49,26 @@ def accueil():
     # Charger et afficher l'image r
     image = Image.open("images/profil.png")  # Remplacez par votre image locale ou une URL
 
+    st.subheader("Zséno FOUOPA") 
+    st.write(""" Mon parcours en tant que Data Analyst est le fruit d’une passion pour la transformation des données en leviers décisionnels.""", unsafe_allow_html=True)
+   
    
     # Créer un conteneur pour l'image et le texte avec des colonnes
-    col1, col2 = st.columns([1, 2])
+    col1, col2 = st.columns([1, 4])
     with col1:
         # Afficher l'image ronde
-        st.image(image, width=250)  # Ajuste la largeur de l'image
+        st.image(image, width=200)  # Ajuste la largeur de l'image
         
     with col2:
         # Ajouter le texte à côté de l'image
-        st.subheader(""" **Zséno Fouopa** """)
         #st.subheader(""" **Mes valeurs : rigueur, analyse et impact.**""")
         st.write("""
-            
-                 
-            Mon parcours en tant que Data Analyst est le fruit d’une passion pour la transformation des données en leviers décisionnels.
+            <p> </p>  <!-- Saut de paragraphe -->
+            <p> </p>  <!-- Saut de paragraphe -->
+       
+            """, unsafe_allow_html=True)
+        
+        st.write("""
                   
             **Mon rôle ?**  **Exploiter les datasets pour en extraire des insights précieux qui éclairent les choix métiers**. 
             
@@ -332,70 +337,25 @@ def contact():
     """Affiche la section de contact de manière ludique avec un message personnalisé et une photo"""
     st.markdown("<div id='contact'></div>", unsafe_allow_html=True)
     #st.header("Me Contacter")
-    
-    # Créer une mise en page avec des colonnes
-    col_gauche, col_droite = st.columns([1, 2])  # Proportions : 2 pour l'image, 3 pour les liens
-    
-    # Colonne gauche : Image
-    with col_gauche:
-        # Ajouter une image pour rendre la section plus visuelle
-        image = Image.open("images/profil.png")  # Assurez-vous que l'image est dans le bon dossier
-        st.image(image, width=150)  # Ajustez la taille de l'image si nécessaire
 
-    # Colonne droite : Texte et Liens de contact
-    with col_droite:
-        # Message personnalisé (texte)
-        st.markdown("""
-        <div style="border: 1px solid #ddd; border-radius: 10px; padding: 10px; margin-top: 10px; background-color: #f9f9f9;">
-            <h4 style="color: #0078D7;">Merci pour votre visite !</h4>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.write("""
-        <p> </p>  <!-- Saut de paragraphe -->
-        <p> </p>  <!-- Saut de paragraphe -->
-       
-        """, unsafe_allow_html=True)
-        
-
-        st.write("""
-        <p> </p>  <!-- Saut de paragraphe -->
-                 <p> </p>  <!-- Saut de paragraphe -->
-                 
+    st.write("""        
         Envie d'en savoir plus ou de discuter d'un projet ?
                  
         N’hésitez pas à me contacter, **votre curiosité est le début de notre collaboration !** 
         """, unsafe_allow_html=True)
-        
-        # Ajouter un fond agréable et des liens interactifs
-        st.markdown("""
+
+    # Ajouter un fond agréable et des liens interactifs
+    st.markdown("""
         <style>
-        .contact-links {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .contact-links a {
-            font-size: 1.2em;
-            color: #0078D7;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-        .contact-links a:hover {
-            transform: scale(1.1);
-            color: #FF5733;  /* Couleur au survol */
-        }
-        .contact-icons {
-            font-size: 1.5em;
-        }
+        .contact-links {display: flex;justify-content: flex-start;align-items: center; gap: 10px; margin-top: 10px;}
+        .contact-links a {font-size: 1.2em; color: #0078D7; text-decoration: none; font-weight: bold; transition: transform 0.3s ease, color 0.3s ease;}
+        .contact-links a:hover {transform: scale(1.1); color: #FF5733;  /* Couleur au survol */}
+        .contact-icons {font-size: 1.2em;}
         </style>
         """, unsafe_allow_html=True)
 
         # Liens de contact avec icônes et survol
-        st.markdown("""
+    st.markdown("""
         <div class="contact-links">
             <a href="mailto:zseno.fouopa@gmail.com" class="contact-icons" title="Envoyer un email">
                 📧 Email
@@ -406,6 +366,38 @@ def contact():
             <a href="https://github.com/zsenof" class="contact-icons" title="Voir mes projets GitHub">
                 🌐 GitHub
             </a>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Créer une mise en page avec des colonnes
+    col_gauche, col_droite = st.columns([1, 5])  # Proportions : 2 pour l'image, 3 pour les liens
+    
+    # Colonne gauche : Image
+    with col_gauche:
+        # Ajouter une image pour rendre la section plus visuelle
+        image = Image.open("images/profil.png")  # Assurez-vous que l'image est dans le bon dossier
+        st.image(image, width=200)  # Ajustez la taille de l'image si nécessaire
+
+    # Colonne droite : Texte et Liens de contact
+    with col_droite:      
+        # Message personnalisé (texte)
+
+        st.write("""
+            <p></p>  <!-- Saut de paragraphe -->
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        """, unsafe_allow_html=True)
+
+        st.write("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+        
+        st.markdown("""
+        <div style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; margin-top: 5px; background-color: #f9f9f9;">
+            <h4 style="color: #0078D7;">Merci pour votre visite !</h4>
         </div>
         """, unsafe_allow_html=True)
 

@@ -282,7 +282,7 @@ def projets():
     )
 
     # Projet 4
-    pdf_file_4 = "assets/Presentation_projet.pdf"  # Assurez-vous que le fichier est dans le dossier "assets"
+    pdf_file_4 = ""  # Assurez-vous que le fichier est dans le dossier "assets"
     portfolio(
         titre="📍 Wild Data Hub | En cours",
         description="Intégration d’un pipeline de données complet pour développer un outil de conseil nutritionnel permettant de recommander des plans alimentaires personnalisés.",

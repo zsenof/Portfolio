@@ -282,12 +282,12 @@ def projets():
     )
 
     # Projet 4
-    pdf_file_4 = ""  # Assurez-vous que le fichier est dans le dossier "assets"
+    # pdf_file_4 = ""  # Assurez-vous que le fichier est dans le dossier "assets"
     portfolio(
         titre="📍 Wild Data Hub | En cours",
         description="Intégration d’un pipeline de données complet pour développer un outil de conseil nutritionnel permettant de recommander des plans alimentaires personnalisés.",
         technologies="APIs REST, Web Scraping, Pandas, PostgreSQL",
-        pdf_file_path=pdf_file_4,
+        pdf_file_path="[]()",
         github_link= "[]()",
         github_label="En-cours",
         image_file_path="images/P4.png",  # Exemple d'image

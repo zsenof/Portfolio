@@ -273,7 +273,7 @@ def projets():
     portfolio(
         titre="📍 Hackathon - Analyse des revenus des ménages",
         description="Un délai de 48H, pour répondre au besoin client. Analyse et segmentation des prospects pour optimiser les offres de produits d’épargne.",
-        technologies="APIs REST, Web Scraping, Pandas, PostgreSQL",
+        technologies="Python (Pandas), SQL, PowerBI",
         pdf_file_path=pdf_file_3,
         github_link= "https://github.com/zsenof/Hackathon_Analyse_revenu_foyer/blob/main/Nettoyage_analyse_donnees.ipynb",
         github_label="Code transformation des données sur Github",
